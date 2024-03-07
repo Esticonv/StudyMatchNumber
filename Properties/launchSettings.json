@@ -1,0 +1,19 @@
+{
+  "profiles": {
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
+    },
+    "WrongCommandLine": {
+      "commandName": "Project",
+      "commandLineArgs": "-?"
+    },
+    "ClearCommandLine": {
+      "commandName": "Project"
+    },
+    "FullCommandLine": {
+      "commandName": "Project",
+      "commandLineArgs": "--attemp-count 5\r\n--min-number 3\r\n--max-number 30"
+    }
+  }
+}
