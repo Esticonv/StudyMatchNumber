@@ -1,4 +1,5 @@
 ﻿using CommandLine;
+using MatchNumber.IO;
 
 namespace MatchNumber
 {
@@ -12,7 +13,12 @@ namespace MatchNumber
         }
         private static void Run(CommandLineOptions options)
         {
-            var gameRunner = new ConsoleGameRunner(new GameModule.MatchGame(options));
+            var game = new GameModule.MatchGame(options);
+            var gameRunner = new GameRunner(
+                game, 
+                new GameModule.Translator(game, options), 
+                inputReader: new ConsoleInputReader(), 
+                outputWriter: new ConsoleOutputWriter());
             gameRunner.Run();
         }
 

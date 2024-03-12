@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MatchNumber.GameModule
+﻿namespace MatchNumber.GameModule
 {
     public interface IGame
     {
-        void SetInput(string input);
-        IEnumerable<string> React();
+        int RightAnswer { get; }
+        int Attemp { get; }
+        GameState State { get; }
+
+        ReactResult React(string input);
     }
 }
